@@ -1,7 +1,7 @@
 from conexao import conectar
 
 def registrar_movimentacao():
-    print("\n📋 Registro de Movimentação de Funcionário")
+    print("\n Registro de Movimentação de Funcionário")
 
     funcionario_id = input("ID do funcionário: ")
     horario = input("Data do evento (YYYY-MM-DD): ")
@@ -19,14 +19,14 @@ def registrar_movimentacao():
 
     tipo = tipos.get(tipo_opcao)
     if not tipo:
-        print("❌ Tipo inválido.")
+        print(" Tipo inválido.")
         return
 
     observacoes = input("Observações (opcional): ")
 
     conexao = conectar()
     if conexao is None:
-        print("❌ Não foi possível conectar ao banco.")
+        print(" Não foi possível conectar ao banco.")
         return
 
     try:
@@ -38,7 +38,7 @@ def registrar_movimentacao():
         valores = (funcionario_id, horario, tipo, observacoes)
         cursor.execute(sql, valores)
         conexao.commit()
-        print(f"✅ {tipo} registrada com sucesso!")
+        print(f" {tipo} registrada com sucesso!")
 
     except Exception as erro:
 
@@ -50,3 +50,4 @@ print("3 - Registrar Admissão/Demissão/Transferência")
 # E no if:
 elif opcao == "3":
     registrar_movimentacao()
+
