@@ -22,9 +22,10 @@ from utils import validar_cpf, confirmar_acao
 
 cpf = input("Digite o CPF: ")
 if not validar_cpf(cpf):
-    print("❌ CPF inválido. Use o formato 000.000.000-00")
+    print(" CPF inválido. Use o formato 000.000.000-00")
     return
 
 if confirmar_acao("Deseja realmente excluir este funcionário?"):
     # Executa exclusão
     pass
+
