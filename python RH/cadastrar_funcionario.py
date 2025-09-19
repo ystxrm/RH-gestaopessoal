@@ -1,7 +1,7 @@
 from conexao import conectar
 
 def cadastrar_funcionario():
-    print("\n📋 Cadastro de Funcionário")
+    print("\n Cadastro de Funcionário")
 
     # Coleta de dados via terminal
     nome = input("Nome completo: ")
@@ -15,7 +15,7 @@ def cadastrar_funcionario():
     # Conecta ao banco
     conexao = conectar()
     if conexao is None:
-        print("❌ Não foi possível conectar ao banco.")
+        print(" Não foi possível conectar ao banco.")
         return
 
     try:
@@ -30,12 +30,13 @@ def cadastrar_funcionario():
 
         cursor.execute(sql, valores)
         conexao.commit()
-        print("✅ Funcionário cadastrado com sucesso!")
+        print(" Funcionário cadastrado com sucesso!")
 
     except Exception as erro:
-        print("❌ Erro ao cadastrar funcionário:")
+        print(" Erro ao cadastrar funcionário:")
         print(erro)
 
     finally:
         cursor.close()
         conexao.close()
+
