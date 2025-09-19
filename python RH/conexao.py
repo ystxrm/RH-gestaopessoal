@@ -11,10 +11,11 @@ def conectar():
             database='rh_empresa'     
         )
 
-        print("✅ Conexão com o banco estabelecida com sucesso!")
+        print(" Conexão com o banco estabelecida com sucesso!")
         return conexao
 
     except mysql.connector.Error as erro:
-        print("❌ Ocorreu um erro ao tentar conectar ao banco de dados.")
+        print(" Ocorreu um erro ao tentar conectar ao banco de dados.")
         print(f"Detalhes do erro: {erro}")
         return None
+
